@@ -119,4 +119,25 @@ extension PHPhotoLibrary {
         })
     }
     
+    static func loadLatestFromAlbum(albumName: String, size: CGSize, completion: @escaping (UIImage?) -> ()) {
+        // Get the album to get images from
+        let album = self.findAlbum(albumName: albumName)! as PHAssetCollection
+        
+        // Sort the images by creation date
+        let fetchOptions = PHFetchOptions()
+        fetchOptions.sortDescriptors = [NSSortDescriptor(key:"creationDate", ascending: false)]
+        if let fetchResult = PHAsset.fetchAssets(in: album, options: fetchOptions).firstObject {
+            // Note that if the request is not set to synchronous
+            // the requestImageForAsset will return both the image
+            // and thumbnail; by setting synchronous to true it
+            // will return just the thumbnail
+            let requestOptions = PHImageRequestOptions()
+            requestOptions.isSynchronous = true
+            
+            PHImageManager.default().requestImage(for: fetchResult, targetSize: size, contentMode: PHImageContentMode.aspectFill, options: requestOptions, resultHandler: {
+                (image, _) in
+                completion(image)
+            })
+        }
+    }
 }

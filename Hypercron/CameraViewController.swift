@@ -29,6 +29,14 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
             return
         }
         
+        // Load the latest image into the overlay
+        PHPhotoLibrary.loadLatestFromAlbum(albumName: "Hypercron", size: overlayImageView.frame.size, completion: {
+            image in
+            DispatchQueue.main.async(execute: {
+                self.overlayImageView.image = image
+            })
+        })
+        
         // Get an instance of the AVCaptureDevice class to initialize a device object and provide the video as the media type parameter
         let captureDevice = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
         
