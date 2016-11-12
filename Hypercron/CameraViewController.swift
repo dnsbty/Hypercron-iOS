@@ -18,6 +18,7 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
     var error : NSError? = nil
     
     @IBOutlet weak var captureButton: UIImageView!
+    @IBOutlet weak var overlayImageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,6 +65,7 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         captureSession?.startRunning()
         
         // Bring UI to the front
+        view.bringSubview(toFront: overlayImageView)
         view.bringSubview(toFront: captureButton)
         
         // Give the capture button a tap event
@@ -112,7 +114,6 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
     }
     
     @IBAction func capturePhoto(gestureRecognizer: UITapGestureRecognizer) {
-        print("Capture button tapped")
         let settings = AVCapturePhotoSettings(format: [AVVideoCodecKey : AVVideoCodecJPEG])
         photoOutput?.capturePhoto(with: settings, delegate: self)
     }
@@ -125,10 +126,9 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
             
             let image = UIImage(cgImage: cgImageRef!, scale: 1.0, orientation: .right)
             
-            PHPhotoLibrary.saveImage(image: image, albumName: "Hypercron", completion: {
-                _ in
-                self.captureButton.image = image
-            })
+            self.overlayImageView.image = image
+            
+            PHPhotoLibrary.saveImage(image: image, albumName: "Hypercron", completion: { _ in })
         }
     }
 }
