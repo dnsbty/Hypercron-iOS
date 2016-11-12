@@ -8,20 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		957AF4DF1DD7024F004F958D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957AF4DE1DD7024F004F958D /* AppDelegate.swift */; };
-		957AF4E11DD7024F004F958D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957AF4E01DD7024F004F958D /* ViewController.swift */; };
+		957AF4E11DD7024F004F958D /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957AF4E01DD7024F004F958D /* CameraViewController.swift */; };
 		957AF4E41DD7024F004F958D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 957AF4E21DD7024F004F958D /* Main.storyboard */; };
 		957AF4E61DD7024F004F958D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 957AF4E51DD7024F004F958D /* Assets.xcassets */; };
 		957AF4E91DD7024F004F958D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 957AF4E71DD7024F004F958D /* LaunchScreen.storyboard */; };
+		957AF4F11DD77B2D004F958D /* PHPhotoLibraryExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957AF4F01DD77B2D004F958D /* PHPhotoLibraryExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		957AF4DB1DD7024F004F958D /* Hypercron.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hypercron.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		957AF4DE1DD7024F004F958D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		957AF4E01DD7024F004F958D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		957AF4E01DD7024F004F958D /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		957AF4E31DD7024F004F958D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		957AF4E51DD7024F004F958D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		957AF4E81DD7024F004F958D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		957AF4EA1DD7024F004F958D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		957AF4F01DD77B2D004F958D /* PHPhotoLibraryExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHPhotoLibraryExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,11 +57,12 @@
 			isa = PBXGroup;
 			children = (
 				957AF4DE1DD7024F004F958D /* AppDelegate.swift */,
-				957AF4E01DD7024F004F958D /* ViewController.swift */,
+				957AF4E01DD7024F004F958D /* CameraViewController.swift */,
 				957AF4E21DD7024F004F958D /* Main.storyboard */,
 				957AF4E51DD7024F004F958D /* Assets.xcassets */,
 				957AF4E71DD7024F004F958D /* LaunchScreen.storyboard */,
 				957AF4EA1DD7024F004F958D /* Info.plist */,
+				957AF4F01DD77B2D004F958D /* PHPhotoLibraryExtension.swift */,
 			);
 			path = Hypercron;
 			sourceTree = "<group>";
@@ -137,7 +140,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				957AF4E11DD7024F004F958D /* ViewController.swift in Sources */,
+				957AF4F11DD77B2D004F958D /* PHPhotoLibraryExtension.swift in Sources */,
+				957AF4E11DD7024F004F958D /* CameraViewController.swift in Sources */,
 				957AF4DF1DD7024F004F958D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -261,6 +265,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = QQWWMCLZJZ;
 				INFOPLIST_FILE = Hypercron/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dennisbeatty.Hypercron;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -274,6 +279,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = QQWWMCLZJZ;
 				INFOPLIST_FILE = Hypercron/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dennisbeatty.Hypercron;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -300,6 +306,7 @@
 				957AF4EF1DD7024F004F958D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
